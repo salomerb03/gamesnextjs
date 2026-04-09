@@ -14,7 +14,7 @@ type GameFormProps = {
         genre?: string;
         console_id?: number;
         price?: number;
-        releasedate?: string;
+        releaseDate?: string;
         cover?: string;
         description?: string;
     };
@@ -108,12 +108,12 @@ export default function GameForm({
                 <div className="flex flex-col gap-1">
                     <span className="text-xs text-white/50 uppercase tracking-widest">Fecha de lanzamiento</span>
                     <input
-                        name="releasedate"
+                        name="releaseDate"
                         type="date"
-                        defaultValue={defaultValues.releasedate}
-                        className={`input input-bordered bg-base-300 ${errors.releasedate ? "input-error" : ""}`}
+                        defaultValue={defaultValues.releaseDate}
+                        className={`input input-bordered bg-base-300 ${errors.releaseDate ? "input-error" : ""}`}
                     />
-                    {errors.releasedate && <span className="text-xs text-red-400">{errors.releasedate[0]}</span>}
+                    {errors.releaseDate && <span className="text-xs text-red-400">{errors.releaseDate[0]}</span>}
                 </div>
             </div>
 

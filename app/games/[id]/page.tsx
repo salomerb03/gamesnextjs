@@ -53,7 +53,7 @@ export default async function GameDetailPage({
                         <Field label="Género">{game.genre}</Field>
                         <Field label="Consola">{game.console.name}</Field>
                         <Field label="Fecha de lanzamiento">
-                            {game.releasedate.toLocaleDateString("es-CO", {
+                            {game.releaseDate.toLocaleDateString("es-CO", {
                                 year: "numeric",
                                 month: "long",
                                 day: "numeric",

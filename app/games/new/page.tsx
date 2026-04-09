@@ -13,7 +13,7 @@ async function createGame(_: unknown, formData: FormData) {
         genre: formData.get("genre") as string,
         console_id: parseInt(formData.get("console_id") as string),
         price: parseFloat(formData.get("price") as string),
-        releasedate: formData.get("releasedate") as string,
+        releaseDate: formData.get("releaseDate") as string,
         cover: (formData.get("cover") as string) || "no-cover.svg",
         description: formData.get("description") as string,
     };
@@ -28,7 +28,7 @@ async function createGame(_: unknown, formData: FormData) {
             title: result.data.title,
             cover: result.data.cover || "no-cover.svg",
             developer: result.data.developer,
-            releasedate: new Date(result.data.releasedate),
+            releaseDate: new Date(result.data.releaseDate),
             price: result.data.price,
             genre: result.data.genre,
             description: result.data.description,

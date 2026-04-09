@@ -26,12 +26,11 @@ model Game{
   title        String @unique
   cover        String @default("no-cover.svg")
   developer    String
-  releaseDate  DateTime @db.Timestamp(0)
+  releaseDate  DateTime @db.Timestamp(0) @map("releasedate")
   price        Float
   genre        String
   description  String @db.Text
 
-  //Relations
   console_id   Int
   console      Console @relation(fields: [console_id], references: [id])
 }

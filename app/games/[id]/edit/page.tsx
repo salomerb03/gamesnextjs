@@ -13,7 +13,7 @@ async function updateGame(_: unknown, formData: FormData) {
         genre: formData.get("genre") as string,
         console_id: parseInt(formData.get("console_id") as string),
         price: parseFloat(formData.get("price") as string),
-        releasedate: formData.get("releasedate") as string,
+        releaseDate: formData.get("releasedate") as string,
         cover: (formData.get("cover") as string) || "no-cover.svg",
         description: formData.get("description") as string,
     };
@@ -30,7 +30,7 @@ async function updateGame(_: unknown, formData: FormData) {
             title: result.data.title,
             cover: result.data.cover || "no-cover.svg",
             developer: result.data.developer,
-            releasedate: new Date(result.data.releasedate),
+            releaseDate: new Date(result.data.releaseDate),
             price: result.data.price,
             genre: result.data.genre,
             description: result.data.description,
@@ -51,7 +51,7 @@ export default async function EditGamePage({
 
     if (!game) notFound();
 
-    const releaseDateStr = game.releasedate.toISOString().split("T")[0];
+    const releaseDateStr = game.releaseDate.toISOString().split("T")[0];
 
     return (
         <div className="max-w-2xl mx-auto py-6">
@@ -74,7 +74,7 @@ export default async function EditGamePage({
                         genre: game.genre,
                         console_id: game.console_id,
                         price: game.price,
-                        releasedate: releaseDateStr,
+                        releaseDate: releaseDateStr,
                         cover: game.cover,
                         description: game.description,
                     }}
